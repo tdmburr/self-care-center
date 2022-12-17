@@ -6,8 +6,8 @@ I created an app that allows two selection of messages being affirmations and ma
 ### Installation Instructions:
 You would go to gitHub and find https://github.com/tdmburr then the repository self-care-center. Select the green code button and select SSH. Then the box button to the right of the url. You would then access your terminal and type git clone to clone it to your machine. You would then cd (change directory) into self-care-center. Then open your code editor and access the page using index.html.
 
-### Preview of App:
-[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+### Preview of App: 
+(https://user-images.githubusercontent.com/109426263/208213264-a8e0db4e-cc71-4c90-adf9-b28929826efd.png)
 
 ### Context:
 In total this took roughly 6-8 hours. I am in my third week at Turing.
