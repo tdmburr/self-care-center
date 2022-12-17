@@ -1,10 +1,12 @@
 var selectionButton = document.querySelector('.message-button');
 var receiveButton = document.querySelector('.receive-button')
 var messageArea = document.querySelector('#message-box')
+var deleteButton = document.querySelector('.delete-button')
 
 var currentMessage;
 
 receiveButton.addEventListener('click', receiveMessage)
+deleteButton.addEventListener('click', deleteMessage)
 
 function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
@@ -14,21 +16,32 @@ function getRandomIndex(array) {
 function receiveMessage(event) {
     event.preventDefault()
     if (selectionButton.checked === true) {
-    var randomAffirmation = getRandomIndex(affirmations)
-    currentMessage = affirmations[randomAffirmation]
+        var randomAffirmation = getRandomIndex(affirmations)
+        currentMessage = affirmations[randomAffirmation]
     } else if (selectionButton.checked === false) {
-    var randomMantra = getRandomIndex(mantras)
-    currentMessage = mantras[randomMantra]   
+        var randomMantra = getRandomIndex(mantras)
+        currentMessage = mantras[randomMantra]   
     }
-    messageArea.innerHTML = `<p>${currentMessage}</p>` 
+    messageArea.innerHTML = `<p>${currentMessage}</p>`
+    deleteButton.classList.remove('hidden')
 }
 
 function deleteMessage() {
-
+    var affirmationIndex = affirmations.indexOf(currentMessage)
+    var mantraIndex = mantras.indexOf(currentMessage)
+    console.log(affirmationIndex)
+    console.log(mantraIndex)
+    if (affirmationIndex > -1) {
+        affirmations.splice(affirmationIndex, 1)
+    }
+    if (mantraIndex > -1) {
+        mantras.splice(mantraIndex, 1)
+    }
+    messageArea.innerText = `Message deleted!`
+    alert('Your message will be deleted. You may receive another.')    
+    deleteButton.classList.add('hidden')
 }
 
-// User can delete a message
-// Add the ability to delete a messge (ie: when a message shows up, show a button that says “I don’t like this messge” (or something similar), and remove it from the list so that it will not show up any more. Make sure to alert the user in some way that the message has been removed.
 
 
 
