@@ -29,8 +29,6 @@ function receiveMessage(event) {
 function deleteMessage() {
     var affirmationIndex = affirmations.indexOf(currentMessage)
     var mantraIndex = mantras.indexOf(currentMessage)
-    console.log(affirmationIndex)
-    console.log(mantraIndex)
     if (affirmationIndex > -1) {
         affirmations.splice(affirmationIndex, 1)
     }
